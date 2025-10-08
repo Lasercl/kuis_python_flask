@@ -229,30 +229,3 @@ def leaderboard():
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-
-
-
-
-# @app.route('/quiz/submit', methods=['POST'])
-# def quiz_submit():
-#     if "user" not in session:
-#         return redirect(url_for('login'))
-
-#     score = 0
-#     conn = get_db_connection()
-#     cur = conn.cursor()
-#     cur.execute("SELECT * FROM questions")
-#     questions = cur.fetchall()
-
-#     for q in questions:
-#         selected = request.form.get(str(q["id"]))
-#         if selected == q["correct_answer"]:
-#             score += 1
-
-#     # simpan skor user ke DB
-#     cur.execute("INSERT INTO scores (username, score) VALUES (?, ?)", (session["user"], score))
-#     conn.commit()
-#     conn.close()
-
-#     return render_template('quiz_result.html', score=score)
