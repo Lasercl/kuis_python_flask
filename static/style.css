@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  background: #ffffff;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 20px;
+}
+
+.messages li.success { color: green; }
+.messages li.error { color: red; }
+.messages li.info { color: blue; }

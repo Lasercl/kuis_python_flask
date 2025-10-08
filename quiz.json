@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Apa kepanjangan dari AI?",
+    "options": ["Artificial Intelligence", "Automated Interaction", "Advanced Integration", "Artificial Innovation"],
+    "answer": "Artificial Intelligence"
+  },
+  {
+    "question": "Library Python yang sering digunakan untuk visi komputer adalah?",
+    "options": ["TensorFlow", "OpenCV", "NLTK", "Keras"],
+    "answer": "OpenCV"
+  },
+  {
+    "question": "Natural Language Processing (NLP) digunakan untuk?",
+    "options": ["Menganalisis teks dan bahasa alami", "Mendeteksi wajah dalam gambar", "Memprediksi cuaca", "Menyimpan data dalam database"],
+    "answer": "Menganalisis teks dan bahasa alami"
+  },
+  {
+    "question": "Model AI yang digunakan untuk mengenali gambar disebut?",
+    "options": ["Convolutional Neural Network", "Recurrent Neural Network", "Decision Tree", "Support Vector Machine"],
+    "answer": "Convolutional Neural Network"
+  },
+  {
+    "question": "Library Python yang umum digunakan untuk membuat model AI adalah?",
+    "options": ["NumPy", "TensorFlow", "Pandas", "Scikit-learn"],
+    "answer": "TensorFlow"
+  },
+  {
+    "question": "Dalam NLP, 'tokenization' berarti?",
+    "options": ["Memecah teks menjadi kata atau kalimat", "Mengubah suara menjadi teks", "Menentukan kategori gambar", "Menghapus kata-kata duplikat"],
+    "answer": "Memecah teks menjadi kata atau kalimat"
+  },
+  {
+    "question": "Model AI seperti ChatGPT dilatih menggunakan teknik?",
+    "options": ["Reinforcement Learning", "Genetic Algorithm", "Gradient Descent", "K-means Clustering"],
+    "answer": "Reinforcement Learning"
+  },
+  {
+    "question": "Dalam visi komputer, teknik 'object detection' digunakan untuk?",
+    "options": ["Mengenali dan memberi lokasi objek dalam gambar", "Mengelompokkan data teks", "Menentukan urutan kata dalam kalimat", "Membuat grafik visualisasi data"],
+    "answer": "Mengenali dan memberi lokasi objek dalam gambar"
+  },
+  {
+    "question": "Framework Python yang populer untuk deep learning adalah?",
+    "options": ["Flask", "PyTorch", "Matplotlib", "Keras"],
+    "answer": "PyTorch"
+  },
+  {
+    "question": "Fungsi utama dari 'model training' dalam AI adalah?",
+    "options": ["Meningkatkan akurasi model berdasarkan data", "Menjalankan model untuk prediksi", "Menghapus data tidak relevan", "Menyimpan model di cloud"],
+    "answer": "Meningkatkan akurasi model berdasarkan data"
+  }
+]

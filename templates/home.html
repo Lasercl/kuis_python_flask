@@ -1,0 +1,229 @@
+{% extends "base.html" %} {% block content %}
+
+<div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#myCarousel"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#myCarousel"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#myCarousel"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+
+  <div class="carousel-inner rounded-4 shadow-lg overflow-hidden">
+    <!-- Slide 1 -->
+    <div
+      class="carousel-item active"
+      style="
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        height: 480px;
+      "
+    >
+      <div
+        class="d-flex align-items-center justify-content-center h-100 text-center text-white"
+      >
+        <div>
+          <h1 class="fw-bold display-5 mb-3">
+            Selamat Datang di <span style="color: #fffbe6">Kuis Pintar!</span>
+          </h1>
+          <p class="lead mb-4">
+            Uji pengetahuanmu dan naik ke puncak leaderboard! 🏆
+          </p>
+          <a
+            href="{{ url_for('quiz') }}"
+            class="btn btn-light btn-lg fw-semibold px-4 py-2 rounded-pill shadow-sm"
+            >Mulai Sekarang</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div
+      class="carousel-item"
+      style="
+        background: linear-gradient(135deg, #0056b3, #4facfe);
+        height: 480px;
+      "
+    >
+      <div
+        class="d-flex align-items-center justify-content-center h-100 text-center text-white"
+      >
+        <div>
+          <h1 class="fw-bold display-5 mb-3">Tantang Temanmu 💪</h1>
+          <p class="lead mb-4">
+            Siapa yang paling cepat menjawab? Ayo buktikan!
+          </p>
+          <a
+            href="{{ url_for('leaderboard') }}"
+            class="btn btn-outline-light btn-lg fw-semibold px-4 py-2 rounded-pill"
+            >Lihat Papan Skor</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div
+      class="carousel-item"
+      style="
+        background: linear-gradient(135deg, #0066cc, #0099ff);
+        height: 480px;
+      "
+    >
+      <div
+        class="d-flex align-items-center justify-content-center h-100 text-center text-white"
+      >
+        <div>
+          <h1 class="fw-bold display-5 mb-3">Belajar Sambil Seru-seruan 🎯</h1>
+          <p class="lead mb-4">
+            Dapatkan poin, pelajari hal baru, dan jadilah juara!
+          </p>
+          <a
+            href="{{ url_for('home') }}"
+            class="btn btn-light btn-lg fw-semibold px-4 py-2 rounded-pill shadow-sm"
+            >Kembali ke Beranda</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#myCarousel"
+    data-bs-slide="prev"
+  >
+    <span
+      class="carousel-control-prev-icon bg-dark rounded-circle p-3"
+      aria-hidden="true"
+    ></span>
+    <span class="visually-hidden">Sebelumnya</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#myCarousel"
+    data-bs-slide="next"
+  >
+    <span
+      class="carousel-control-next-icon bg-dark rounded-circle p-3"
+      aria-hidden="true"
+    ></span>
+    <span class="visually-hidden">Selanjutnya</span>
+  </button>
+</div>
+
+<style>
+  /* Transisi lembut */
+  .carousel-item {
+    transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+  }
+
+  /* Tombol indikator */
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cce0ff;
+  }
+  .carousel-indicators .active {
+    background-color: #007bff;
+  }
+
+  /* Responsif */
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 360px;
+    }
+    h1.display-5 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+
+<!-- CUACA -->
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h1 class="fw-bold text-primary">🌤️ Prakiraan Cuaca</h1>
+    <p class="text-secondary">
+      Masukkan nama kota untuk melihat perkiraan cuaca terkini
+    </p>
+  </div>
+
+  <form method="POST" action="/" class="row justify-content-center g-3">
+    <div class="col-md-6 col-sm-8">
+      <input
+        type="text"
+        name="city"
+        class="form-control form-control-lg shadow-sm"
+        placeholder="Masukkan nama kota..."
+        required
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+        Lihat Cuaca
+      </button>
+    </div>
+  </form>
+
+  {% if weather %}
+  <div class="mt-5">
+    {% if weather.error %}
+    <div class="alert alert-danger text-center shadow-sm" role="alert">
+      {{ weather.error }}
+    </div>
+    {% else %}
+    <div class="card shadow border-0">
+      <div class="card-header bg-primary text-white text-center">
+        <h4 class="mb-0">Cuaca di {{ weather.city }}</h4>
+      </div>
+      <div class="card-body bg-light">
+        <div class="table-responsive">
+          <table
+            class="table table-bordered table-hover text-center align-middle bg-white"
+          >
+            <thead class="table-primary">
+              <tr>
+                <th>Tanggal</th>
+                <th>Suhu Siang (°C)</th>
+                <th>Suhu Malam (°C)</th>
+                <th>Kondisi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for f in weather.forecast %}
+              <tr>
+                <td>{{ f.date }}</td>
+                <td>{{ f.day_temp }}</td>
+                <td>{{ f.night_temp }}</td>
+                <td>{{ f.desc }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
